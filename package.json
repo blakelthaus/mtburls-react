@@ -19,7 +19,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && npm run s3_remove_github && npm run s3_sync_github && npm run cloudfront_invalidate_github",
+    "s3_remove_github": "aws s3 rm --recursive s3://mtburls-react-us-east-1",
+    "s3_sync_github": "aws s3 sync ./bbuild s3://mtburls-react-us-east-1",
+    "cloudfront_invalidate_github": "aws cloudfront create-invalidation --distribution-id [did] --paths '/*'"
   },
   "eslintConfig": {
     "extends": [
