@@ -45,9 +45,9 @@ export default function Feed(props) {
         sx={{ 
           width: {
             xs: '70%',
+            sm: '40%',
             md: '27%'
           },
-          marign: '5%',
           padding: '30px',
         }}
       >

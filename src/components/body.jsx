@@ -23,24 +23,26 @@ export default function Body() {
   }, [])
 
   return (
-    <Box className="feedbody" sx={{ width: '100%', display: 'flex', flexDirection: 'row', backgroundColor: '#F7F7F7'}}>
-      <Box className="feeds" 
-        sx={{ 
-          display: 'flex', 
-          flexDirection: 'row', 
-          flexWrap: 'wrap', 
-          justifyContent: 'center' 
-        }}
-      >
-        {!isLoading && (
-          Object.keys(sites).map(site => {
-            console.log(site)
-            return (
-              <Feed key={site} data={sites[site]}/>
-            ) 
-          })
-        )}
+    <>
+      <Box className="feedbody" sx={{ width: '100%', display: 'flex', flexDirection: 'row', backgroundColor: '#F7F7F7'}}>
+        <Box className="feeds" 
+          sx={{ 
+            display: 'flex', 
+            flexDirection: 'row', 
+            flexWrap: 'wrap', 
+            justifyContent: 'center' 
+          }}
+        >
+          {!isLoading && (
+            Object.keys(sites).map(site => {
+              console.log(site)
+              return (
+                <Feed key={site} data={sites[site]}/>
+              ) 
+            })
+          )}
+        </Box>
       </Box>
-    </Box>
+    </>
   )
 }
